@@ -4,7 +4,7 @@ from func.Speak import Speak
 from llm.GPT4 import ChatGpt
 from llm.filter import Filter
 
-import datetime , time
+import datetime , time 
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
@@ -17,14 +17,12 @@ def wishMe():
     else:
         Speak("Good Evening!","I am Friday Sir. Please tell me how may I help you")  
 
-wishMe()
-
 Previous_Chat = open(r"D:\Jarvis\JARVIS\data\chat.txt", "r")
 Previous_Chat = Previous_Chat.read()
 
-ChatGpt(f"Our prevoius chat Chat now according to this{Previous_Chat}. NOTE don't reply only for this command. I gave you this command to just rember past chats")
+wishMe()
 
-time.sleep(3)
+ChatGpt(f"Our prevoius chat{Previous_Chat} Chat now according to this. NOTE don't reply only for this command. I gave you this command to tell you our prevoius chats")
 
 while 1:
     Query = Listen().lower()
@@ -56,15 +54,13 @@ while 1:
         f.close()        
 
     elif 'jarvis' in Query:
-        
-
-        begin = time.time()
 
         Query = Query.replace("jarvis","")
         code = ChatGpt(f"{Query} ***use python programing language. just write complete code nothing else, also don't dare to use input function*** **you can use the module that i provided if required**")
         code = Filter(code)
 
         try:
+            begin = time.time()
             exec(code)
             end = time.time()
 
