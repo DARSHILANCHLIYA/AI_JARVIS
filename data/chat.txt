@@ -1,2 +1,8 @@
 YOU:  HI
  AI:  Hello! How can I assist you today?
+YOU:  Myname is Darshil
+ AI:  Nice to meet you, Darshil! How can I assist you today?
+YOU:  Tell my name
+ AI:  Your name is Darshil.
+YOU:  Tell me my name
+ AI:  Your name is Darshil.
