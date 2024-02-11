@@ -26,6 +26,8 @@ while 1:
         Speak(response)
 
     elif 'jarvis' in Query:
+
+        Query = Query.replace("jarvis","")
         code = ChatGpt(f"{Query} ***use python programing language. just write complete code nothing else, also don't dare to use input function*** **you can use the module that i provided if required**")
         code = Filter(code)
 
