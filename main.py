@@ -20,9 +20,10 @@ def wishMe():
 Previous_Chat = open(r"D:\Jarvis\JARVIS\data\chat.txt", "r")
 Previous_Chat = Previous_Chat.read()
 
-wishMe()
+
 
 ChatGpt(f"Our prevoius chat{Previous_Chat} Chat now according to this. NOTE don't reply only for this command. I gave you this command to tell you our prevoius chats")
+wishMe()
 
 while 1:
     Query = Listen().lower()
@@ -56,8 +57,8 @@ while 1:
     elif 'jarvis' in Query:
 
         Query = Query.replace("jarvis","")
-        code = ChatGpt(f"{Query} ***use python programing language. just write complete code nothing else, also don't dare to use input function*** **you can use the module that i provided if required**")
-        code = Filter(code)
+        c = ChatGpt(f"{Query} ***use python programing language. just write complete code nothing else, also don't dare to use input function*** **you can use the module that i provided if required**")
+        code = Filter(c)
 
         try:
             begin = time.time()
